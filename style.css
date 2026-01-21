@@ -1,0 +1,229 @@
+@keyframes Left-slide {
+    from {
+        transform: translateX(-1000px);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(-700px);
+        opacity: 1;
+    }
+}
+
+@keyframes Right-slide {
+    from {
+        transform: translateX(1000px);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(700px);
+        opacity: 1;
+    }
+}
+@keyframes Opacity {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+.display-flex{
+    display: flex;
+    flex-direction: column;
+}
+.main-text {
+    font-family: "Irina Serif", serif;
+    font-weight: 400;
+    font-style: italic;
+    font-size: 100px;
+    line-height: 100%;
+    color: #9E0059;
+    text-shadow: -10px 5px 0px #FF0054;
+    animation: Left-slide 2s ease-out forwards;
+}
+
+.main-text-block {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-top: 150px;
+}
+
+.right-move {
+    position: relative;
+    animation: Right-slide 2s ease-out forwards;
+    width: 400px;
+    height: 300px;
+}
+
+.david {
+    position: absolute;
+    top: -30px;
+    left: -30px;
+    width: 100%; /* или задайте конкретные размеры */
+    height: auto;
+    z-index: 2; /* Чтобы изображение было поверх блока */
+}
+
+.colored-box {
+    width: 392px;
+    height: 483px;
+    background-color: #9b1b61;
+    border-top-left-radius: 50px;
+    border-bottom-right-radius: 50px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1; /* Чтобы блок был под изображением */
+}
+
+
+.example{
+    position: absolute;
+    z-index: 2; /* Чтобы изображение было поверх блока */
+    display: block;
+}
+.rectangle{
+    width: 380px;
+    height: 480px;
+    background-color: #9b1b61;
+    position:relative;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    transition: background-color 1s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.rectangle:hover{
+    animation: smoothStageTransition 1s ease-in-out forwards;
+}
+@keyframes smoothStageTransition {
+    0% {
+        background-color: #9b1b61;
+    }
+    50% {
+        background-color: #eb5691; /* максимальное осветление */
+    }
+
+    100% {
+        background-color: #ff0054;
+    }
+}
+
+
+/* Добавьте это для правильного позиционирования */
+.image-container {
+    position: relative;
+    width: 392px; /* Ширина блока */
+    height: 483px; /* Высота блока */
+}
+
+.column {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: row-reverse;
+}
+.column2 {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: row-reverse;
+    gap: 20px;
+    margin-top: 30px;
+}
+.column3 {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    align-items: center;
+    flex-direction: row-reverse;
+    margin-top: 30px;
+
+
+}
+.column-monalisa{
+    flex-direction: column-reverse;
+}
+.image{
+    border-radius: 12px;
+    height: 260px;
+    width: 180px;
+    transition: all 1s ease;
+    transform-origin: left top;
+}
+.image:hover{
+    transform: scale(130%);
+
+}
+.image2{
+    width: 180px;
+    height: 180px;
+    border-radius: 12px;
+    transition: all 1s ease;
+    transform-origin: left top;
+}
+.image2:hover{
+    transform: scale(130%);
+}
+
+
+.playfair-display {
+font-family: "Playfair Display";
+font-weight: 700;
+font-style: Bold;
+font-size: 32px;
+line-height: 100%;
+letter-spacing: 0%;
+text-align: center;
+opacity: 1 !important; /* ← Убедитесь, что текст виден */
+margin-top: 200px;
+z-index: 3;
+}
+.image-title {
+    font-family: "Playfair Display";
+    color: white;
+    margin-top: 15px;
+    font-style: normal;
+    z-index: 3;
+    position: relative;
+    width: 100%;
+    text-align: center;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 100%;
+    letter-spacing: 0%;
+}
+.image-text {
+    font-family: "Playfair Display";
+    color: white;
+    margin-top: 15px;
+    font-style: normal;
+    padding: 10px;
+    z-index: 3;
+    position: relative;
+    width: 100%;
+    text-align: left;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 100%;
+    letter-spacing: 0%;
+    
+}
+.column2-wrapper{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    animation: Opacity 2s ease-out forwards;
+    animation-delay: 2s; /* ← Правильная задержка (2 секунды) */
+    opacity: 0; /* ← Начальное состояние */
+    animation-fill-mode: forwards; /* ← Сохраняет конечное состояние */
+}
+.column3-wrapper{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    animation: Opacity 2s ease-out forwards;
+    animation-delay: 2s; /* ← Правильная задержка (2 секунды) */
+    opacity: 0; /* ← Начальное состояние */
+    animation-fill-mode: forwards; /* ← Сохраняет конечное состояние */
+}
